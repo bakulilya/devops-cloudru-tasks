@@ -1,0 +1,11 @@
+---
+
+- name: Ensure cloudru ssh settings applied
+  hosts: all
+  remote_user: root
+
+  roles:
+    - role: create-new-user
+    - role: ssh-allow-by-key
+    - role: ssh-forbid-root
+    - role: cloudru-public-key

@@ -1,0 +1,6 @@
+--- 
+
+- name: ensure user exists
+  ansible.builtin.user:
+    name: cloudru
+    password: {{ 'cloudpass' | password_hash('sha512', 'mysecretsalt') }}
