@@ -1,0 +1,7 @@
+---
+
+- name: ensure public key exists
+  ansible.posix.authorized_key:
+    user: cloudru
+    state: present
+    key: "{{ lookup('file', 'files/id_rsa.pub') }}"
